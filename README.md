@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Router
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## routing 이란
+  * 일반적으로 routing이란 네트워크상에 특정 경로(url)를 이용했을 떄 어떤 경로를 이용해서 데이터를 받아 올 건지(길,경로)를 결정해주는 것 입니다
+  * 웹에서 통상적으로 말하는 라우팅이란 사용자가 요청하는 url링크를 요청했을때 어떤 특정한 페이지로 결정하는 메카니즘입니다
+  즉 사용자가 url를 줬을때 어떤 페이지로 연결 할 껀지를 결정할 수 있습니다
 
-## Available Scripts
+다음과 같은 home,login,profile 등과 과 같은 경로가 붙었을 때 에는 어떤 페이지를 보여줄건지 결정하고 도와주는 것이 라우팅 입니다
+```
+www.hello.com
+www.hello.com/home
+www.hello.com/login
+www.hello.com/profile
+.
+.
+.
+```
 
-In the project directory, you can run:
+## Single Page Application (SPA) 의 문제점을 보안 가능
 
-### `yarn start`
+router를 이용하여 SPA의 문제점을 개선할 수 있습니다 SPA는 한번페이지가 로딩되고 나면 그 안에서 사용자가 다른 페이지 또는 링크를 클릭했을떄 새로운 페이지가 열리는것이 아니고 전체적인 페이지가 새로고침 되는것이 아니고 부분적인 내용만 업데이트 됩니다 즉 해당하는 컴포넌트만 동적으로 변화합니다
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+문제점은 페이지 안에서만 동작이 일어났기 때문에 다음과 같은 기능이 불가능 합니다
+* 북마크 불가능
+* 브라우저 상에서 뒤로가기 앞으로 가기 (네비게이션에 추가 X) 불가능 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Single Page Application을 유지하면서 url을 붙일 수 있는 해당 페이지로 바로갈수 있고 네비게이션을 추가할 수 있게 도와주는 것이 React Router입니다
